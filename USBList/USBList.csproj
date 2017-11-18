@@ -34,6 +34,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Interop.PortableDeviceApiLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>Scanner\wpd-lib\lib\Interop.PortableDeviceApiLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.PortableDeviceTypesLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>Scanner\wpd-lib\lib\Interop.PortableDeviceTypesLib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,6 +61,11 @@
     <Compile Include="Device\USBDevice.cs" />
     <Compile Include="Dispatcher\USBDispatcher.cs" />
     <Compile Include="Scanner\USBScanner.cs" />
+    <Compile Include="Scanner\wpd-lib\DevicePropertyKeys.cs" />
+    <Compile Include="Scanner\wpd-lib\PortableDeviceCollection.cs" />
+    <Compile Include="Scanner\wpd-lib\PortableDeviceFolder.cs" />
+    <Compile Include="Scanner\wpd-lib\PortableDeviceObject.cs" />
+    <Compile Include="Scanner\wpd-lib\PortableDevice.cs" />
     <Compile Include="USBListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,7 +96,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Scanner\wpd-lib\lib\Interop.PortableDeviceApiLib.dll" />
+    <Content Include="Scanner\wpd-lib\lib\Interop.PortableDeviceTypesLib.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

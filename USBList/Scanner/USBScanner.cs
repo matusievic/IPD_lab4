@@ -26,5 +26,24 @@ namespace USBList.Scanner
         }
 
 
+        /// <summary>
+        /// This fuction gets the list of USB devices
+        /// </summary>
+        /// <returns></returns>
+        private List<USBDevice> getUSBList()
+        {
+            var drives = System.IO.DriveInfo.GetDrives().Where(drive => drive.IsReady && drive.DriveType == System.IO.DriveType.Removable).ToList();
+            var res = new List<USBDevice>();
+            foreach (var d in drives)
+            {
+                var t = new USBDeviceImpl();
+                t.TotalMemory = d.TotalSize;
+                t.FreeMemory = d.TotalFreeSpace;
+                t.UsedMemory = d.TotalSize - d.TotalFreeSpace;
+                t.Name = d.VolumeLabel;
+                t.Letter = d.RootDirectory.ToString()[0];
+            }
+            return res;
+        }
     }
 }
