@@ -12,6 +12,6 @@ namespace USBList.Device
         double TotalMemory { get; }
         double UsedMemory { get; }
         double FreeMemory { get; }
-        void eject();
+        void Eject();
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Diagnostics;
+using System.IO;
 
 namespace USBList.Device
 {
@@ -12,8 +14,9 @@ namespace USBList.Device
         public double FreeMemory { get; set; }
         public double UsedMemory { get; set; }
         public double TotalMemory { get; set; }
-        public void eject()
+        public void Eject()
         {
+            WinUSBEjector.WinUSBEjector.disconnect(this.Letter);
         }
     }
 }

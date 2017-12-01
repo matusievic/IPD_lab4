@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.USBListTable = new System.Windows.Forms.DataGridView();
             this.NameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +52,19 @@
             this.UsedMemoryColumn,
             this.TotalMemoryColumn,
             this.EjectColumn});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.USBListTable.DefaultCellStyle = dataGridViewCellStyle2;
             this.USBListTable.Location = new System.Drawing.Point(-2, -1);
             this.USBListTable.Name = "USBListTable";
             this.USBListTable.Size = new System.Drawing.Size(609, 259);
             this.USBListTable.TabIndex = 0;
+            this.USBListTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.USBListTable_CellContentClick);
             // 
             // NameColumn
             // 
@@ -111,6 +121,7 @@
             this.Controls.Add(this.USBListTable);
             this.Name = "UBSListForm";
             this.Text = "USB List";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UBSListForm_Closed);
             ((System.ComponentModel.ISupportInitialize)(this.USBListTable)).EndInit();
             this.ResumeLayout(false);
 

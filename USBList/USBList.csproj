@@ -54,6 +54,12 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinUSB">
+      <HintPath>..\..\WinUSB\WinUSB\bin\Release\WinUSB.dll</HintPath>
+    </Reference>
+    <Reference Include="WinUSBEjector">
+      <HintPath>..\..\WinUSBEjector\WinUSBEjector\bin\Release\WinUSBEjector.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Device\Impl\MTPDeviceImpl.cs" />
@@ -61,11 +67,7 @@
     <Compile Include="Device\USBDevice.cs" />
     <Compile Include="Dispatcher\USBDispatcher.cs" />
     <Compile Include="Scanner\USBScanner.cs" />
-    <Compile Include="Scanner\wpd-lib\DevicePropertyKeys.cs" />
-    <Compile Include="Scanner\wpd-lib\PortableDeviceCollection.cs" />
-    <Compile Include="Scanner\wpd-lib\PortableDeviceFolder.cs" />
-    <Compile Include="Scanner\wpd-lib\PortableDeviceObject.cs" />
-    <Compile Include="Scanner\wpd-lib\PortableDevice.cs" />
+    <Compile Include="Updater.cs" />
     <Compile Include="USBListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,10 +97,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scanner\wpd-lib\lib\Interop.PortableDeviceApiLib.dll" />
-    <Content Include="Scanner\wpd-lib\lib\Interop.PortableDeviceTypesLib.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
