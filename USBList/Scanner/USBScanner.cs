@@ -30,7 +30,7 @@ namespace USBList.Scanner
             {
                 for (var j = 0; j < mtpList.Count; j++)
                 {
-                    if (usbList[i].FreeMemory == mtpList[i].FreeMemory)
+                    if (usbList[i].FreeMemory == mtpList[i].FreeMemory && usbList[i].TotalMemory == mtpList[i].TotalMemory && usbList[i].UsedMemory == mtpList[i].UsedMemory)
                     {
                         mtpList.Remove(mtpList[j]);
                         j--;
