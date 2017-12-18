@@ -16,7 +16,14 @@ namespace USBList.Device
         public double TotalMemory { get; set; }
         public void Eject()
         {
-            WinUSBEjector.WinUSBEjector.disconnect(this.Letter);
+            var сmd = new Process();
+            сmd.StartInfo.UseShellExecute = false;
+            сmd.StartInfo.RedirectStandardOutput = true;
+            сmd.StartInfo.StandardOutputEncoding = Encoding.GetEncoding(866);
+            сmd.StartInfo.FileName = Path.Combine(System.Environment.SystemDirectory + "\\rmdrive");
+            сmd.StartInfo.Arguments = Letter.ToString();
+            сmd.StartInfo.CreateNoWindow = true;
+            сmd.Start();
         }
     }
 }

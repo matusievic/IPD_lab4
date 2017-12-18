@@ -30,9 +30,13 @@ namespace USBList
             {
                 Thread.Sleep(ONE_SECOND);
                 try
-                { _form.Invoke((MethodInvoker)delegate { _form.UpdateFormData(); }); }
+                {
+                    _form.Invoke((MethodInvoker)delegate { _form.UpdateFormData(); });
+                }
                 catch
-                { break; }
+                {
+                    break;
+                }
             }
         }
     }
